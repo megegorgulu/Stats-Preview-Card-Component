@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*::after, *::before {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --V-dark-blue: hsl(233, 47%, 7%);
+    --D-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+    --White: hsl(0, 0%, 100%);
+    --S-white-paragraph: hsla(0, 0%, 100%, 0.75);
+    --S-white-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--V-dark-blue);
+    font-size: 15px;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 900px;
+    background-color: var(--D-desaturated-blue);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.card-content, .card-img {
+    width: 50%;
+    height: 100%;
+
+}
+
+h1 {
+    margin: 0 auto 24px;
+    width: 340px;
+    font: 700 32px 'Inter';
+    color: var(--White);
+}
+
+.eye-catcher {
+    color: var(--Soft-violet)
+}
+
+.description {
+    width: 340px;
+    height: 120px;
+    margin: 0 auto;
+    color: var(--S-white-paragraph);
+    font: 400 15px 'Lexend Deca';
+    line-height: 1.7;
+}
+
+.card-stats {
+    width: 340px;
+    margin: 0 auto;
+    padding-right: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.stat-value {
+    color: var(--White);
+    font: 700 20px 'Inter';
+}
+
+.stat-text {
+    color: var(--S-white-headings);
+    font: 400 10px 'Lexend Deca';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-img {
+    position: relative;
+}
+
+.purple-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Soft-violet);
+    filter: saturate(1.5) brightness(50%) opacity(60%);    
+}
+
+@media (max-width: 900px) {
+    main {
+        height: auto;
+    }
+
+    .card {
+        width: 375px;
+        flex-direction: column;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+    .card-content {
+        width: 100%;
+        padding: 32px 0;
+        order: 2;
+    }
+
+    .title {
+        width: 300px;
+        text-align: center;
+    }
+
+    .description {
+        width: 210px;
+        text-align: center;
+    }
+
+    .card-img {
+        order: 1;
+    }
+
+    .card-stats {
+        align-items: center;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .stats {
+        align-items: center;
+    }
+}
